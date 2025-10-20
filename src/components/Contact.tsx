@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Building2, Home, Palmtree } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -63,26 +63,41 @@ const Contact = () => {
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Phone className="w-8 h-8 text-accent" />
+                    <Building2 className="w-8 h-8 text-accent" />
                   </div>
-                  <h3 className="text-lg font-semibold text-primary mb-2">Phone</h3>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <h3 className="text-lg font-semibold text-primary mb-2">New York</h3>
+                  <a 
+                    href="tel:+13323881323"
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    (332) 388-1323
+                  </a>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Mail className="w-8 h-8 text-accent" />
+                    <Home className="w-8 h-8 text-accent" />
                   </div>
-                  <h3 className="text-lg font-semibold text-primary mb-2">Email</h3>
-                  <p className="text-muted-foreground">inquiries@vespergroup.com</p>
+                  <h3 className="text-lg font-semibold text-primary mb-2">Connecticut</h3>
+                  <a 
+                    href="tel:+19176452915"
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    (917) 645-2915
+                  </a>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MapPin className="w-8 h-8 text-accent" />
+                    <Palmtree className="w-8 h-8 text-accent" />
                   </div>
-                  <h3 className="text-lg font-semibold text-primary mb-2">Office</h3>
-                  <p className="text-muted-foreground">By Appointment</p>
+                  <h3 className="text-lg font-semibold text-primary mb-2">Florida</h3>
+                  <a 
+                    href="tel:+13058970270"
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    (305) 897-0270
+                  </a>
                 </div>
               </div>
 
