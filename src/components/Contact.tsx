@@ -1,8 +1,50 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!email || !email.includes("@")) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Show success message
+    toast({
+      title: "Successfully subscribed!",
+      description: "Thank you for subscribing to our design ideas newsletter.",
+    });
+
+    // Reset form and close modal
+    setName("");
+    setEmail("");
+    setOpen(false);
+  };
+
   return (
     <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-6">
@@ -46,18 +88,67 @@ const Contact = () => {
 
               <div className="text-center space-y-6">
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  We invite you to explore how Vesper Real Estate Group can bring your residential vision to life with unparalleled expertise, creativity, and dedication.
+                  Stay inspired with exclusive design insights, project highlights, and ideas from our team of experts.
                 </p>
                 
-                <Button 
-                  size="lg"
-                  className="bg-accent hover:bg-accent/90 text-primary text-lg px-10 py-6"
-                >
-                  Schedule a Consultation
-                </Button>
+                <Dialog open={open} onOpenChange={setOpen}>
+                  <DialogTrigger asChild>
+                    <Button 
+                      size="lg"
+                      className="bg-accent hover:bg-accent/90 text-primary text-lg px-10 py-6"
+                    >
+                      Subscribe to Our Design Ideas Newsletter
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-playfair text-primary">
+                        Join Our Newsletter
+                      </DialogTitle>
+                      <DialogDescription className="text-muted-foreground">
+                        Receive exclusive design insights, project highlights, and inspiration delivered to your inbox.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="name" className="text-primary">
+                          Name
+                        </Label>
+                        <Input
+                          id="name"
+                          type="text"
+                          placeholder="Your name"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          className="border-border focus:ring-accent"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email" className="text-primary">
+                          Email <span className="text-destructive">*</span>
+                        </Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="your@email.com"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
+                          className="border-border focus:ring-accent"
+                        />
+                      </div>
+                      <Button 
+                        type="submit"
+                        className="w-full bg-accent hover:bg-accent/90 text-primary"
+                      >
+                        Subscribe
+                      </Button>
+                    </form>
+                  </DialogContent>
+                </Dialog>
 
                 <p className="text-sm text-muted-foreground italic">
-                  All consultations are confidential and tailored to your unique needs
+                  Exclusive insights and inspiration delivered to your inbox
                 </p>
               </div>
             </CardContent>
