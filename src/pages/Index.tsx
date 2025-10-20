@@ -1,3 +1,4 @@
+import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Philosophy from "@/components/Philosophy";
 import Differentiators from "@/components/Differentiators";
@@ -10,6 +11,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Navigation />
       <Hero />
       <Philosophy />
       <Differentiators />
