@@ -11,6 +11,38 @@ const Footer = () => {
           <p className="text-sm opacity-75 max-w-2xl mx-auto">
             Crafting extraordinary private residences through integrated architecture, interior design, landscape architecture, development management, and property management services.
           </p>
+          
+          <div className="pt-8 space-y-3">
+            <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm opacity-90">
+              <a 
+                href="tel:+13323881323" 
+                className="hover:text-accent transition-colors"
+              >
+                New York - (332) 388-1323
+              </a>
+              <span className="hidden sm:inline opacity-50">|</span>
+              <a 
+                href="tel:+19176452915" 
+                className="hover:text-accent transition-colors"
+              >
+                Connecticut - (917) 645-2915
+              </a>
+              <span className="hidden sm:inline opacity-50">|</span>
+              <a 
+                href="tel:+13058970270" 
+                className="hover:text-accent transition-colors"
+              >
+                Florida - (305) 897-0270
+              </a>
+            </div>
+            <a 
+              href="mailto:John@VesperRealEstateGroup.com" 
+              className="block text-sm opacity-90 hover:text-accent transition-colors"
+            >
+              John@VesperRealEstateGroup.com
+            </a>
+          </div>
+
           <div className="pt-8 border-t border-primary-foreground/20">
             <p className="text-sm opacity-75">
               © {new Date().getFullYear()} Vesper Real Estate Group. All rights reserved.
