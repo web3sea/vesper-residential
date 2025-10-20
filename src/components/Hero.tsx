@@ -30,8 +30,8 @@ const Hero = () => {
         <Button 
           onClick={scrollToContact}
           size="lg"
-          variant="outline"
-          className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 transition-all duration-300"
+          variant="hero"
+          className="text-lg px-8 py-6"
         >
           Begin Your Journey
         </Button>
