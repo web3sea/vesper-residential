@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto text-center space-y-6">
           <h3 className="text-3xl font-bold">Vesper Real Estate Group</h3>
           <p className="text-lg opacity-90">
-            Private Homes & Estates
+            a Vesper Real Estate Group Company
           </p>
           <div className="w-24 h-1 bg-accent mx-auto" />
           <p className="text-sm opacity-75 max-w-2xl mx-auto">
@@ -15,17 +15,24 @@ const Footer = () => {
           <div className="pt-8 space-y-3">
             <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm opacity-90">
               <a 
-                href="tel:+13323881323" 
+                href="tel:+19147142272" 
                 className="hover:text-accent transition-colors"
               >
-                New York - (332) 388-1323
+                Scarsdale, NY - 914-714-2272
               </a>
               <span className="hidden sm:inline opacity-50">|</span>
               <a 
-                href="tel:+19176452915" 
+                href="tel:+13323881323" 
                 className="hover:text-accent transition-colors"
               >
-                Connecticut - (917) 645-2915
+                New York, NY - 332-388-1323
+              </a>
+              <span className="hidden sm:inline opacity-50">|</span>
+              <a 
+                href="tel:+12039142429" 
+                className="hover:text-accent transition-colors"
+              >
+                Greenwich, CT - (203) 914-2429
               </a>
               <span className="hidden sm:inline opacity-50">|</span>
               <a 
@@ -36,10 +43,10 @@ const Footer = () => {
               </a>
             </div>
             <a 
-              href="mailto:John@VesperRealEstateGroup.com" 
+              href="mailto:john@geigershomeandgarden.com" 
               className="block text-sm opacity-90 hover:text-accent transition-colors"
             >
-              John@VesperRealEstateGroup.com
+              john@geigershomeandgarden.com
             </a>
           </div>
 

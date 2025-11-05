@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Building2, Home, Palmtree } from "lucide-react";
+import { Building2, Home, Palmtree, MapPin } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -60,30 +60,43 @@ const Contact = () => {
         <div className="max-w-5xl mx-auto">
           <Card className="border-border shadow-xl">
             <CardContent className="p-12">
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Building2 className="w-8 h-8 text-accent" />
+                    <Home className="w-8 h-8 text-accent" />
                   </div>
-                  <h3 className="text-lg font-semibold text-primary mb-2">New York</h3>
+                  <h3 className="text-lg font-semibold text-primary mb-2">Scarsdale, NY</h3>
                   <a 
-                    href="tel:+13323881323"
+                    href="tel:+19147142272"
                     className="text-muted-foreground hover:text-accent transition-colors"
                   >
-                    (332) 388-1323
+                    914-714-2272
                   </a>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Home className="w-8 h-8 text-accent" />
+                    <Building2 className="w-8 h-8 text-accent" />
                   </div>
-                  <h3 className="text-lg font-semibold text-primary mb-2">Connecticut</h3>
+                  <h3 className="text-lg font-semibold text-primary mb-2">New York, NY</h3>
                   <a 
-                    href="tel:+19176452915"
+                    href="tel:+13323881323"
                     className="text-muted-foreground hover:text-accent transition-colors"
                   >
-                    (917) 645-2915
+                    332-388-1323
+                  </a>
+                </div>
+
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MapPin className="w-8 h-8 text-accent" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-primary mb-2">Greenwich, CT</h3>
+                  <a 
+                    href="tel:+12039142429"
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    (203) 914-2429
                   </a>
                 </div>
 
