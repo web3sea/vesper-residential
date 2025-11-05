@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto text-center space-y-6">
           <h3 className="text-3xl font-bold">Geiger's Home & Garden</h3>
           <p className="text-lg opacity-90">
-            a Geiger's Home & Garden Company
+            a Vesper Real Estate Group company
           </p>
           <div className="w-24 h-1 bg-accent mx-auto" />
           <p className="text-sm opacity-75 max-w-2xl mx-auto">
