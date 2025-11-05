@@ -184,7 +184,7 @@ const Contact = () => {
 
           <div className="mt-12 text-center">
             <p className="text-muted-foreground text-sm">
-              Vesper Real Estate Group is committed to protecting your privacy. Information shared during consultations is held in strict confidence.
+              Geiger's Home & Garden is committed to protecting your privacy. Information shared during consultations is held in strict confidence.
             </p>
           </div>
         </div>

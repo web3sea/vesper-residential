@@ -29,11 +29,11 @@ const Navigation = () => {
         <button
           onClick={scrollToTop}
           className="flex items-center transition-transform hover:scale-105"
-          aria-label="Vesper Real Estate Group - Return to top"
+          aria-label="Geiger's Home & Garden - Return to top"
         >
           <img 
             src={logo} 
-            alt="Vesper Real Estate Group Logo" 
+            alt="Geiger's Home & Garden Logo" 
             className={`transition-all duration-300 ${
               isScrolled ? "h-10 md:h-12" : "h-12 md:h-14"
             }`}

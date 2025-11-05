@@ -69,7 +69,7 @@ const Differentiators = () => {
 
         <div className="mt-16 text-center max-w-4xl mx-auto">
           <p className="text-xl text-primary font-semibold italic">
-            With Vesper, you gain a dedicated ally who stands alone in delivering extraordinary environments and a client experience that redefines what's possible. We don't just build projects, we build legacies.
+            With Geiger's Home & Garden, you gain a dedicated ally who stands alone in delivering extraordinary environments and a client experience that redefines what's possible. We don't just build projects, we build legacies.
           </p>
         </div>
       </div>
