@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-estate.jpg";
+import badge40Years from "@/assets/40-years-badge.jpg";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -17,6 +18,15 @@ const Hero = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/70" />
+      </div>
+
+      {/* 40 Years Badge */}
+      <div className="absolute top-8 right-8 z-10 animate-fade-in">
+        <img 
+          src={badge40Years} 
+          alt="40 Years - World Class Estates" 
+          className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 drop-shadow-2xl"
+        />
       </div>
 
       {/* Content */}
