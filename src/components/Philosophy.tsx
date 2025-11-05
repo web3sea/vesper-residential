@@ -1,7 +1,18 @@
+import badge40Years from "@/assets/40-years-badge.jpg";
+
 const Philosophy = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background relative">
       <div className="container mx-auto px-6 max-w-5xl">
+        {/* 40 Years Badge */}
+        <div className="absolute top-8 right-8 animate-fade-in">
+          <img 
+            src={badge40Years} 
+            alt="40 Years - World Class Estates" 
+            className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 drop-shadow-lg"
+          />
+        </div>
+
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
             Our Philosophy
