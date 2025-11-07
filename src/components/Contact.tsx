@@ -13,36 +13,73 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+const newsletterSchema = z.object({
+  name: z.string().trim().min(1, { message: "Name is required" }).max(100, { message: "Name must be less than 100 characters" }),
+  email: z.string().trim().email({ message: "Invalid email address" }).max(255, { message: "Email must be less than 255 characters" }),
+});
 
 const Contact = () => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Basic validation
-    if (!email || !email.includes("@")) {
+    try {
+      // Validate input
+      const validatedData = newsletterSchema.parse({ name, email });
+
+      // Save to database
+      const { error } = await supabase
+        .from('newsletter_subscribers')
+        .insert([
+          {
+            name: validatedData.name,
+            email: validatedData.email,
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
+      // Show success message
       toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
+        title: "Successfully subscribed!",
+        description: "Thank you for subscribing to our design ideas newsletter.",
       });
-      return;
+
+      // Reset form and close modal
+      setName("");
+      setEmail("");
+      setOpen(false);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        // Handle validation errors
+        toast({
+          title: "Validation error",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else {
+        // Handle database errors
+        toast({
+          title: "Subscription failed",
+          description: "An error occurred. Please try again later.",
+          variant: "destructive",
+        });
+        console.error("Error subscribing to newsletter:", error);
+      }
+    } finally {
+      setIsSubmitting(false);
     }
-
-    // Show success message
-    toast({
-      title: "Successfully subscribed!",
-      description: "Thank you for subscribing to our design ideas newsletter.",
-    });
-
-    // Reset form and close modal
-    setName("");
-    setEmail("");
-    setOpen(false);
   };
 
   return (
@@ -167,9 +204,10 @@ const Contact = () => {
                       </div>
                       <Button 
                         type="submit"
+                        disabled={isSubmitting}
                         className="w-full bg-accent hover:bg-accent/90 text-primary"
                       >
-                        Subscribe
+                        {isSubmitting ? "Subscribing..." : "Subscribe"}
                       </Button>
                     </form>
                   </DialogContent>
