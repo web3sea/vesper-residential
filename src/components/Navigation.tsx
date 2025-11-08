@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import logo from "@/assets/Vesper_Eye_Logo.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,19 +29,31 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-6">
-        <button
-          onClick={scrollToTop}
-          className="flex items-center transition-transform hover:scale-105"
-          aria-label="Geiger's Home & Garden - Return to top"
-        >
-          <img 
-            src={logo} 
-            alt="Geiger's Home & Garden Logo" 
+        <div className="flex items-center justify-between">
+          <button
+            onClick={scrollToTop}
+            className="flex items-center transition-transform hover:scale-105"
+            aria-label="Geiger's Home & Garden - Return to top"
+          >
+            <img 
+              src={logo} 
+              alt="Geiger's Home & Garden Logo" 
+              className={`transition-all duration-300 ${
+                isScrolled ? "h-10 md:h-12" : "h-12 md:h-14"
+              }`}
+            />
+          </button>
+          
+          <Button
+            onClick={() => navigate("/auth")}
+            variant="outline"
             className={`transition-all duration-300 ${
-              isScrolled ? "h-10 md:h-12" : "h-12 md:h-14"
+              isScrolled ? "border-border" : "border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
             }`}
-          />
-        </button>
+          >
+            Admin Login
+          </Button>
+        </div>
       </div>
     </nav>
   );
