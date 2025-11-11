@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Philosophy from "@/components/Philosophy";
 import Differentiators from "@/components/Differentiators";
 import Services from "@/components/Services";
+import { ImageCarousel } from "@/components/ImageCarousel";
 import Process from "@/components/Process";
 import GlobalPerspective from "@/components/GlobalPerspective";
 import Contact from "@/components/Contact";
@@ -16,6 +17,7 @@ const Index = () => {
       <Philosophy />
       <Differentiators />
       <Services />
+      <ImageCarousel />
       <Process />
       <GlobalPerspective />
       <Contact />
