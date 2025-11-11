@@ -46,10 +46,9 @@ const Navigation = () => {
           
           <Button
             onClick={() => navigate("/auth")}
-            variant="outline"
-            className={`transition-all duration-300 ${
-              isScrolled ? "border-border" : "border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
-            }`}
+            variant="hero"
+            size="lg"
+            className="px-8 py-6"
           >
             Admin Login
           </Button>
