@@ -33,7 +33,7 @@ const Hero = () => {
           variant="hero"
           className="text-lg px-8 py-6"
         >
-          Begin Your Journey
+          Subscribe to Our Design Ideas Newsletter
         </Button>
       </div>
 
