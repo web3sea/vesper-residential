@@ -1,11 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-estate.jpg";
+import { NewsletterModal } from "@/components/NewsletterModal";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -28,7 +28,7 @@ const Hero = () => {
           Crafting extraordinary private residences through bespoke design, meticulous craftsmanship, and a profound respect for each client's individuality
         </p>
         <Button 
-          onClick={scrollToContact}
+          onClick={() => setModalOpen(true)}
           size="lg"
           variant="hero"
           className="text-lg px-8 py-6"
@@ -41,6 +41,8 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <ChevronDown className="w-8 h-8 text-primary-foreground" />
       </div>
+
+      <NewsletterModal open={modalOpen} onOpenChange={setModalOpen} />
     </section>
   );
 };
