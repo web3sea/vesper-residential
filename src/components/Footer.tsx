@@ -4,9 +4,14 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto text-center space-y-6">
           <h3 className="text-3xl font-bold">Geiger's Home & Garden</h3>
-          <p className="text-lg opacity-90">
+          <a 
+            href="https://www.vesperrealestategroup.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-lg opacity-90 hover:text-accent transition-colors inline-block"
+          >
             a Vesper Real Estate Group company
-          </p>
+          </a>
           <div className="w-24 h-1 bg-accent mx-auto" />
           <p className="text-sm opacity-75 max-w-2xl mx-auto">
             Crafting extraordinary private residences through integrated architecture, interior design, landscape architecture, development management, and property management services.
