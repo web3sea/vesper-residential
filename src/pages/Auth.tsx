@@ -11,7 +11,7 @@ import { z } from "zod";
 import logo from "@/assets/Vesper_Eye_Logo.png";
 
 const emailSchema = z.string().email("Invalid email address");
-const passwordSchema = z.string().min(6, "Password must be at least 6 characters");
+const passwordSchema = z.string().min(12, "Password must be at least 12 characters");
 
 const Auth = () => {
   const [email, setEmail] = useState("");
