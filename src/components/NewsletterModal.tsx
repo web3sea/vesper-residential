@@ -12,8 +12,8 @@ interface NewsletterModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const emailSchema = z.string().email("Please enter a valid email address");
-const nameSchema = z.string().min(1, "Please enter your name");
+const emailSchema = z.string().email("Please enter a valid email address").max(255, "Email must be less than 255 characters");
+const nameSchema = z.string().min(1, "Please enter your name").max(100, "Name must be less than 100 characters");
 
 export const NewsletterModal = ({ open, onOpenChange }: NewsletterModalProps) => {
   const [name, setName] = useState("");
